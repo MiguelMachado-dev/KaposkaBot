@@ -4,11 +4,12 @@ module.exports = {
   description: "Create news",
   run: async (client, message, args) => {
     if (message.member.roles.find((x) => x.name, "botDev")) {
-      const change = args.join(" ");
+      const userMessage = args.join(" ");
 
       message.delete().catch((O_o) => {});
 
-      const userMessage = change;
+      if (!userMessage)
+        return message.channel.send("Você precisa informar qual a novidade.");
 
       client.channels
         .get("720644687769108641")
