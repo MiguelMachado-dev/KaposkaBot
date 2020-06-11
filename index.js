@@ -70,6 +70,8 @@ client.on("message", async (message) => {
   let command = client.commands.get(cmd);
   if (!command) command = client.commands.get(client.aliases.get(cmd));
 
+  if (command === "say") command.run(client, message, args);
+
   if (message.channel.name === "terminal") {
     if (command) command.run(client, message, args);
   } else {
