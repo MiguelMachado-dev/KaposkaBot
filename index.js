@@ -70,9 +70,10 @@ client.on("message", async (message) => {
   let command = client.commands.get(cmd);
   if (!command) command = client.commands.get(client.aliases.get(cmd));
 
-  if (command === "say") command.run(client, message, args);
-
-  if (message.channel.name === "terminal") {
+  if (
+    message.channel.name === "terminal" ||
+    message.member.roles.find((x) => x.name, "botDev")
+  ) {
     if (command) command.run(client, message, args);
   } else {
     message.channel.send(
