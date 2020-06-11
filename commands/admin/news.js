@@ -1,8 +1,8 @@
 const { RichEmbed } = require("discord.js");
 module.exports = {
-  name: "changelog",
+  name: "news",
   category: "admin",
-  description: "Create changelog",
+  description: "Create news",
   run: async (client, message, args) => {
     if (message.member.roles.find((x) => x.name, "botDev")) {
       const change = args.join(" ");
