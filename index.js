@@ -70,7 +70,7 @@ client.on("message", async (message) => {
   let command = client.commands.get(cmd);
   if (!command) command = client.commands.get(client.aliases.get(cmd));
 
-  if (message.channel.name === "comandos-bot") {
+  if (message.channel.name === "terminal") {
     if (command) command.run(client, message, args);
   } else {
     message.channel.send(
