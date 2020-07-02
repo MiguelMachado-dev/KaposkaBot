@@ -20,14 +20,17 @@ client.on("ready", () => {
   client.user.setPresence({
     status: "online",
     game: {
-      name: `a galera tomando na jabiraca`,
-      type: "WATCHING",
+      name: "Veja nois ao vivo!",
+      url: "https://www.twitch.tv/migtito",
+      type: "STREAMING",
     },
   });
 });
 
 client.on("guildMemberAdd", (member) => {
-  const role = member.guild.roles.find("name", "Comerciante");
+  const role = member.guild.roles.find("name", "Andarilho");
+  const defaultRole = member.guild.roles.find("name", "Tiltado");
+  member.addRole(defaultRole);
   member.addRole(role);
 });
 
